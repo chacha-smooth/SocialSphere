@@ -1,14 +1,9 @@
-const {Router} = require("express");
-
+//path: domain/new
+const { Router } = require("express");
 
 const newRouter = Router();
-newRouter.get("/", (req,res)=> res.send("New page"));
-
+const controller = require("../controllers/NewController");
+newRouter.get("/", controller.get);
+newRouter.post("/", controller.post)
 
 module.exports = newRouter;
-
-
-
-
-
-
